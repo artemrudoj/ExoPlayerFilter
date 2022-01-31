@@ -27,14 +27,16 @@ android {
     }
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.github.artemrudoj'
-            artifactId = 'ExoPlayerFilter'
-            version = '0.3.0'
+afterEvaluate {
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.release
 
-            from components.java
+                groupId = 'com.github.artemrudoj'
+                artifactId = 'ExoPlayerFilter'
+                version = '0.3.0'
+            }
         }
     }
 }
